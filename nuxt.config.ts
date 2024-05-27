@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      appURL: "http://localhost",
+      appURL: "http://awsdev.sagexglobal.ai",
     },
   },
   routeRules: {
