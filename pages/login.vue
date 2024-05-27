@@ -1,29 +1,51 @@
+
 <script setup lang="ts">
+
 definePageMeta({
-  layout: "centered",
+  // layout: "auth",
+  middleware: ["guest"]
 });
+
+const { login } = useSanctumAuth();
+
+const userCredentials = {
+  email: "",
+  password: "",
+};
+async function handleLogin() {
+  try
+  {
+    await login(userCredentials);
+    useRouter().replace("/me");
+  }
+  catch (err)
+  {
+    console.log(err);
+  }
+}
+
 </script>
 <template>
-  <div class="login">
-    <h1>Login</h1>
     <form>
-      <label>
-        <div>Email</div>
-        <input type="text" />
-      </label>
+      <v-text-field
+          v-model="userCredentials.email"
+          label="E-mail"
+          required
+      ></v-text-field>
 
-      <label>
-        <div>Password</div>
-        <input type="password" />
-      </label>
-      <button class="btn">Login</button>
-    </form>
-
-    <p>
-      Don't have an account?
-      <NuxtLink class="underline text-lime-600" to="/register"
-        >Register now!</NuxtLink
+      <v-text-field
+          v-model="userCredentials.password"
+          label="Password"
+          required
+          type="password"
+      ></v-text-field>
+      <v-btn
+          class="me-4"
+          @click="handleLogin()"
       >
-    </p>
-  </div>
-</template>
+        submit
+      </v-btn>
+    </form>
+  </template>
+
+

@@ -1,5 +1,14 @@
 <template>
-  <div>
+  <div class="h-[100vh] flex justify-center items-center">
+    <div
+      class="p-5 rounded w-96 bg-white shadow border-t-[8px] border-gray-800"
+    >
+      <slot></slot>
+    </div>
+  </div>
+
+  <template>
+    <div>
       <v-layout class="rounded rounded-md">
         <v-navigation-drawer>
           <v-list>
@@ -10,27 +19,10 @@
         <v-app-bar title="Application bar"></v-app-bar>
 
         <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
-          <p>Hi {{ user.name }}</p>
-          <v-btn @click="logout_user()"> Logout </v-btn>
+          <slot></slot>
         </v-main>
       </v-layout>
-  </div>
+    </div>
+  </template>
+
 </template>
-
-<script setup>
-definePageMeta({
-  middleware: ["auth"],
-});
-
-const { user ,logout} = useSanctumAuth();
-
-function logout_user()
-{
-  logout();
-  useRouter().replace("/login");
-  // user.value = null;
-}
-
-
-
-</script>

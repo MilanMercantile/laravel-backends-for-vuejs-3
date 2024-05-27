@@ -1,33 +1,41 @@
-# "Laravel Backends for Vue.js 3" Front End Source Code
+# Nuxt 3 Minimal Starter
 
-[![](https://vueschool.io/media/1b4b17d7dfaf4a708fbd160ba767b6d8/laravel-backends-for-vue-js-3-not-transparent.jpg)](https://vueschool.io/courses/laravel-backends-for-vue-js-3)
-
-This repository contains the front end source code for the course: "Laravel Backends for Vue.js 3".
-
-The main branch is the starting point for the course (the boilerplate code) and the solutions branch
-includes commits for each lesson.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
 # npm
 npm install
 
 # pnpm
-pnpm install --shamefully-hoist
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on `http://localhost:3000`:
 
 ```bash
+# npm
 npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
 ## Production
@@ -35,13 +43,33 @@ npm run dev
 Build the application for production:
 
 ```bash
+# npm
 npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
 Locally preview production build:
 
 ```bash
+# npm
 npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

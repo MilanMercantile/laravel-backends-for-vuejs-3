@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-4xl">👋 Hello Laravel!</h1>
+  <div>
+   Welcome
+  </div>
 </template>
+<script setup lang="ts">
+definePageMeta({
+  middleware: ["auth"],
+});
+</script>

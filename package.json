@@ -1,26 +1,19 @@
 {
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build-amplify": "NITRO_PRESET=awsAmplify nuxt build",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "nuxt": "^3.11.2"
-  },
   "dependencies": {
-    "@formkit/icons": "^1.0.0-beta.14",
-    "@formkit/nuxt": "^1.0.0-beta.14",
-    "@formkit/themes": "^1.0.0-beta.14",
-    "@formkit/vue": "^1.0.0-beta.14",
-    "@vueuse/nuxt": "^9.11.0",
-    "axios": "^1.2.3",
-    "laravel-vue-pagination": "^4.0.0",
-    "nanoid": "^4.0.0",
-    "query-string": "^8.1.0"
+    "nuxt": "^3.11.2",
+    "nuxt-auth-sanctum": "^0.3.4",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "vuetify-nuxt-module": "^0.14.0"
   }
 }

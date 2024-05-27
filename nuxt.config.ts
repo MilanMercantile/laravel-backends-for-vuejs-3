@@ -1,19 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@vueuse/nuxt", "@nuxtjs/tailwindcss", "@formkit/nuxt"],
-  css: ["@/assets/main.css"],
-  tailwindcss: {
-    config: {
-      content: ["./node_modules/laravel-vue-pagination/**/*.vue"],
+  // devtools: { enabled: true },
+  modules: [
+      "vuetify-nuxt-module",
+      "nuxt-auth-sanctum"
+  ],
+    sanctum: {
+        baseUrl: process.env.API_BASE_URL, // Laravel API
+        userStateKey: 'sanctum.user.identity',
+        redirectIfAuthenticated: false,
+        endpoints: {
+            csrf: '/sanctum/csrf-cookie',
+            login: '/api/login',
+            logout: '/api/logout',
+            user: '/api/user',
+        },
+        csrf: {
+            cookie: 'XSRF-TOKEN',
+            header: 'X-XSRF-TOKEN',
+        },
+        client: {
+            retry: false,
+        },
+        logLevel: 3
     },
-  },
-  runtimeConfig: {
-    public: {
-      appURL: "http://awsdev.sagexglobal.ai",
-    },
-  },
-  routeRules: {
-    "/profiles/*": { swr: true },
-    "/*": { ssr: false },
-  },
-});
+})
