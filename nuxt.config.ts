@@ -7,13 +7,12 @@ export default defineNuxtConfig({
   ],
     sanctum: {
         baseUrl: process.env.API_BASE_URL, // Laravel API
-        userStateKey: 'sanctum.user.identity',
-        redirectIfAuthenticated: false,
+        // userStateKey: 'sanctum.user.identity',
+        // redirectIfAuthenticated: false,
         endpoints: {
             csrf: '/sanctum/csrf-cookie',
             login: '/api/login',
-            logout: '/api/logout',
-            user: '/api/user',
+            logout: '/api/logout'
         },
         csrf: {
             cookie: 'XSRF-TOKEN',
@@ -24,4 +23,8 @@ export default defineNuxtConfig({
         },
         logLevel: 3
     },
+    routeRules: {
+        "/**": { ssr: false },
+    },
+    css: ['~/assets/scss/colors.scss']
 })
