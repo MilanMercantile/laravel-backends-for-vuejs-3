@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build-amplify": "NITRO_PRESET=awsAmplify nuxt build" ,
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
